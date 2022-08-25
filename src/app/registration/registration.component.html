@@ -1,0 +1,88 @@
+
+<section class="vh-100 bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="mask d-flex align-items-center h-80 gradient-custom-3">
+  <div class="container h-80">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-6 col-xl-6">
+        <div class="card" style="border-radius: 14px;">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center mb-5">Register Yourself</h2>
+
+             <form #personForm1="ngForm" (ngSubmit)="RegisterForm(personForm1)">
+
+
+              <div class="form-outline mb-4">
+                <!-- <input type="text" id="name1" name="name1" #namer="ngModel" [(ngModel)]="name1" class="form-control form-control-lg" />
+                <label class="form-label" for="name1">Your name</label> -->
+                <div class="form-outline" col-md-12>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Your Name</mat-label>
+                    <input required id="name1" matInput placeholder="Enter Name" #namer="ngModel" name="name1" [(ngModel)]="name1"/>
+                    <mat-error *ngIf="namer.invalid">
+                      Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <!-- <input type="email" id="email2" name="email2" #emailr="ngModel" [(ngModel)]="email2"  class="form-control form-control-lg" />
+                <label class="form-label" for="email2">Enter email</label> -->
+                <div class="form-outline" col-md-12>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Your Email</mat-label>
+                    <input required id="email2" matInput placeholder="Enter Email" #emailr="ngModel" name="email2" [(ngModel)]="email2"/>
+                    <mat-error *ngIf="emailr.invalid">
+                      Email is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+               <div class="row" col-md-12 >
+              <div class="form-outline mb-4" col-md-6>
+                <!-- <input type="password" id="password2" name="password2" #passwordr="ngModel" [(ngModel)]="password2" class="form-control form-control-lg" />
+                <label class="form-label" for="password2">Enter Password</label> -->
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Your Password</mat-label>
+                  <input required id="password2" matInput placeholder="Enter Password" #passwordr="ngModel" name="password2" [(ngModel)]="password2"/>
+                  <mat-error *ngIf="passwordr.invalid">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="form-outline mb-4" col-md-6>
+                <!-- <input type="password" id="password3" name="password3" #passwordr3="ngModel" [(ngModel)]="password3" class="form-control form-control-lg" />
+                <label class="form-label" for="password3">Re-enter password</label> -->
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Confirm Password</mat-label>
+                  <input required id="password3" matInput placeholder="Enter Password" #passwordr3="ngModel" name="password3" [(ngModel)]="password3" />
+                  <mat-error *ngIf="passwordr3.invalid">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+      
+
+              <div class="d-flex justify-content-center">
+                <button routerLink="login" type="button" 
+                  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"> <a href="/login">Register</a></button>
+              </div>
+
+              
+              
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- <div *ngIf="isregister==false">
+    <app-login></app-login>
+
+</div> -->

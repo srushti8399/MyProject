@@ -1,0 +1,60 @@
+
+	
+
+ <div class="container">
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <h2 class="text-uppercase text-center p-3">Product Details</h2>
+
+  </div>
+</div>
+     <div class="row  form-group col-md-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+       <strong>Category:</strong>{{ProdObj.category}}
+
+      </div>
+      <div class="col-md-3">
+        <strong>Name:</strong>{{ProdObj.name}}
+
+      </div>
+      <div class="col-md-3">
+        <strong>Colour:</strong>{{ProdObj.colour}}
+
+      </div>
+    </div> 
+    <div class="row form-group col-md-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+       <strong>Code:</strong>{{ProdObj.code}}
+
+      </div>
+      <div class="col-md-3">
+        <strong>Price:</strong>{{ProdObj.price}}
+
+      </div>
+      <div class="col-md-3">
+        <strong>Stock:</strong>{{ProdObj.stock}}
+
+      </div>
+    </div> 
+    <div class=" row form-group col-md-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+       <strong>Description:</strong>{{ProdObj.description}}
+
+      </div>
+      <div class="col-md-3">
+        <strong>Image:</strong><img class="image" src="{{ProdObj.image}}" >
+
+      </div>
+    </div>
+    <div align="center">
+        <!-- <div class="col-md-2"></div>
+        <div class="col-md-3"> -->
+          <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" (click)="Backtoproduct()">Go to Product</button>
+  
+        
+      
+    </div>  
+    

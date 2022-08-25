@@ -1,0 +1,16 @@
+.image{
+width: 40px;
+height:40px
+}
+
+  .form-group {
+    margin-bottom: 30px;
+    font-size: larger;
+    
+}
+.gradient-custom-4 {
+	
+	
+	
+	background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+	}

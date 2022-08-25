@@ -1,0 +1,149 @@
+<h2 class="text-uppercase text-center mb-5 padding">Create Product</h2>
+<form class="center padding-table" [formGroup]="productForm" (ngSubmit)="submit()" >
+   
+ <div class="row">
+  <div class="col-md-2"></div>
+   <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       <!-- <mat-form-field appearance="fill">
+         <mat-label>Category</mat-label>
+         <input required id="category" matInput placeholder="Enter Category" name="category" formControlName="category" />
+          <mat-error *ngIf="category.invalid">
+           Category is <strong>required</strong>
+         </mat-error> 
+       </mat-form-field> -->
+       
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Category</mat-label>
+  <mat-select [formControl]="category" multiple >
+    <mat-select-trigger>
+      {{category.value?.[0] || ''}}
+      <span *ngIf="(category.value?.length || 0) > 1" class="example-additional-selection">
+        (+{{(category.value?.length || 0) - 1}} {{category.value?.length === 2 ? 'other' : 'others'}})
+      </span>
+    </mat-select-trigger>
+    <mat-option *ngFor="let category of categoryList" [value]="category">{{category}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="productForm.get('name')!.errors!==null && productForm.get('name')!.errors!['required']">
+    Category is <strong>required</strong>
+  </mat-error>
+  </mat-form-field>
+     </div>
+   </div>
+   <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       <mat-form-field appearance="fill" class="example-full-width">
+         <mat-label>Name</mat-label>
+         <input required id="name"  matInput placeholder="Enter Name"   name="name"  formControlName="name"  />
+           <mat-error *ngIf="productForm.get('name')!.errors!==null && productForm.get('name')!.errors!['required']">
+           Name is <strong>required</strong>
+         </mat-error> 
+       </mat-form-field>
+     </div>
+   </div>
+   <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       <mat-form-field appearance="fill" class="example-full-width">
+         <mat-label>code</mat-label>
+         <input required id="code" matInput placeholder="Enter code" name="code" formControlName="code"  />
+         
+          <mat-error *ngIf="productForm.get('code')!.errors!==null && productForm.get('code')!.errors!['required']">
+           code is <strong>required</strong>
+         </mat-error>
+         <mat-error *ngIf="productForm.get('code')!.errors!==null && productForm.get('code')!.errors!['minlength']">
+            minimum  <strong>1</strong>character is required.
+          </mat-error>
+          <mat-error *ngIf="productForm.get('code')!.errors!==null && productForm.get('code')!.errors!['maxlength']">
+            minimum <strong>6</strong>characters required
+          </mat-error> 
+       </mat-form-field>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+  <div class="col-md-2"></div>
+   <div class="col-md-3 mb-4">
+ <div class="form-outline">
+   <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>colour</mat-label>
+      <input required id="colour" matInput placeholder="Enter colour"  name="colour" formControlName="colour"  />
+      <mat-error *ngIf="productForm.get('colour')!.errors!==null && productForm.get('colour')!.errors!['required'] ">
+        Colour is <strong>required</strong>
+      </mat-error> 
+   </mat-form-field>
+ </div>
+</div>
+<div class="col-md-3 mb-4">
+ <div class="form-outline">
+  <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input required id="description" matInput type="text" placeholder="description"  name="description" formControlName="description" />
+       <mat-error *ngIf="productForm.controls['description']!.errors!=null && productForm.controls['description']!.errors!['required'] ">
+        Description is <strong>required</strong>
+      </mat-error> 
+      <mat-error *ngIf="productForm.controls['description']!.errors!=null && productForm.controls['description']!.errors!['descriptionmismatch']">
+        Description is invalid.
+        </mat-error>
+    </mat-form-field>
+   
+ </div>
+</div>
+<div class="col-md-3 mb-4">
+ <div class="form-outline">
+     <mat-form-field appearance="fill" class="example-full-width">
+         <mat-label>Price</mat-label>
+         <input required id="price" matInput type="text" placeholder="price"  name="price" formControlName="price"  />
+         <mat-error *ngIf="productForm.get('price')!.errors!==null && productForm.get('price')!.errors!['required']">
+            Price is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="productForm.get('price')!.errors!==null && productForm.get('price')!.errors!['min']">
+             Price  must be greater than 200
+           </mat-error>
+           <mat-error *ngIf="productForm.get('price')!.errors!==null && productForm.get('price')!.errors!['max']">
+             Price must be less than 1 lakh
+           </mat-error> 
+       </mat-form-field>
+ </div>
+</div>
+ </div>  
+ <div class="row">
+  <div class="col-md-2"></div>
+     <div class="col-md-3 mb-4">
+   <div class="form-outline">
+     <mat-form-field appearance="fill" class="example-full-width">
+         <mat-label>stock</mat-label>
+         <input type="text" required id="stock" matInput name="stock" formControlName="stock"  />
+         <mat-error *ngIf="productForm.get('stock')!.errors!==null && productForm.get('stock')!.errors!['required']">
+            Stock is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="productForm.get('stock')!.errors!==null && productForm.get('stock')!.errors!['min']">
+             Stock  must be greater than 0
+           </mat-error>
+       </mat-form-field>
+       </div>
+       </div>
+       <div class="col-md-3 mb-4">
+         <div class="form-outline">
+             <mat-form-field appearance="fill" class="example-full-width">
+                 <mat-label>Image</mat-label>
+                 <input type="text" required id="image" matInput name="image" formControlName="image"  />
+               
+               <mat-error *ngIf="productForm.get('image')!.errors!==null && productForm.get('image')!.errors!['required'] ">
+                Image is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+         </div>
+     </div>
+
+
+ </div>
+ <div class="container" style="text-align:center;">
+  
+  
+ <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" >Create</button>
+  
+  
+  
+ </div>
+ 
+</form> 

@@ -1,0 +1,62 @@
+
+              <h2 class="text-uppercase text-center mb-5">Delete Employee</h2>
+              <div class="row  form-group col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                 <strong>FirstName:</strong>{{EmpObj.firstname}}
+          
+                </div>
+                <div class="col-md-3">
+                  <strong>MiddleName:</strong>{{EmpObj.middlename}}
+          
+                </div>
+                <div class="col-md-3">
+                  <strong>LastName:</strong>{{EmpObj.lastname}}
+          
+                </div>
+              </div> 
+              <div class="row form-group col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                 <strong>EmployeeId:</strong>{{EmpObj.id}}
+          
+                </div>
+                <div class="col-md-3">
+                  <strong>Gender:</strong>{{EmpObj.gender}}
+          
+                </div>
+                <div class="col-md-3">
+                  <strong>Age:</strong>{{EmpObj.age}}
+          
+                </div>
+              </div> 
+              <div class=" row form-group col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                 <strong>Date of Birth:</strong>{{EmpObj.Dob}}
+                 </div>
+                <div class="col-md-3">
+                  <strong>Address1:</strong>{{EmpObj.add1}}
+          
+                </div>
+                <div class="col-md-3">
+                  <strong>Address2:</strong>{{EmpObj.add2}}
+          
+                </div>
+              </div>
+              
+              
+          <div class="container" style="text-align:center;">
+            
+              
+                
+              <button  type="button" 
+                class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" (click)="GoEmployee1()"> Employee</button>
+              
+                <div class="space"></div>
+              <button  type="button" 
+                class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" (click)="openDialog()">Delete Details</button>
+              
+              
+            </div>
+            

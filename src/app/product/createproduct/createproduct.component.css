@@ -1,0 +1,17 @@
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  .padding {
+     
+    padding-top: 40px;
+
+  }
+  .padding-table {
+     
+    padding-top:2px;
+
+  }
+  .example-full-width {
+    width: 100%;
+  }

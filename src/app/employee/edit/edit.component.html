@@ -1,0 +1,124 @@
+
+                  <h2 class="text-uppercase text-center mb-5">Employee Details</h2>
+                  <form class="center" #userForm="ngForm"  (ngSubmit)="saveUser(userForm)" >
+                     
+                   <div class="row">
+                    <div class="col-md-2"></div>
+                     <div class="col-md-3 mb-4">
+                       <div class="form-outline">
+                         <mat-form-field appearance="fill" class="example-full-width">
+                           <mat-label>FirstName</mat-label>
+                           <input required id="firstname" matInput placeholder="Enter FirstName" #fname="ngModel" name="Empfirstname" [(ngModel)]="EmpObj.firstname"/>
+                           
+                           <mat-error *ngIf="fname.invalid">
+                             Name is <strong>required</strong>
+                           </mat-error>
+                         </mat-form-field>
+                       </div>
+                     </div>
+                     <div class="col-md-3 mb-4">
+                       <div class="form-outline">
+                         <mat-form-field appearance="fill" class="example-full-width">
+                           <mat-label>MiddleName</mat-label>
+                           <input  id="middlename"  matInput placeholder="Enter MiddleName" #mname="ngModel"  name="Empmiddlename" [(ngModel)]="EmpObj.middlename" />
+                           
+                           <mat-error *ngIf="mname.invalid">
+                             Name is <strong>required</strong>
+                           </mat-error>
+                         </mat-form-field>
+                       </div>
+                     </div>
+                     <div class="col-md-3 mb-4">
+                       <div class="form-outline">
+                         <mat-form-field appearance="fill" class="example-full-width">
+                           <mat-label>LastName</mat-label>
+                           <input required id="lastname" matInput placeholder="Enter LastName" #lastname1="ngModel" name="Emplastname" [(ngModel)]="EmpObj.lastname"/>
+                           
+                           <mat-error *ngIf="lastname1.invalid">
+                             Name is <strong>required</strong>
+                           </mat-error>
+                         </mat-form-field>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-md-2"></div>
+                     <div class="col-md-3 mb-4">
+                   <div class="form-outline">
+                     <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Gender</mat-label>
+                        <input required id="gender" matInput placeholder="Enter Gender" #gender1="ngModel" name="Empgen" [(ngModel)]="EmpObj.gender"/>
+                        <mat-error *ngIf="gender1.invalid">
+                          gender is <strong>required</strong>
+                        </mat-error>
+                     </mat-form-field>
+                   </div>
+                 </div>
+                 <div class="col-md-3 mb-4">
+                   <div class="form-outline">
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Date of Birth</mat-label>
+                        <input required id="dob" matInput type="text" placeholder="date of birth"   #Dob1="ngModel" name="Empdate" [(ngModel)]="EmpObj.Dob"/>
+            
+                      </mat-form-field>
+                     
+                   </div>
+                 </div>
+                 <div class="col-md-3 mb-4">
+                   <div class="form-outline">
+                       <mat-form-field appearance="fill" class="example-full-width">
+                           <mat-label>Age</mat-label>
+                           <input required id="age" matInput type="text" placeholder="Age"   #age1="ngModel" name="Empage" [(ngModel)]="EmpObj.age"/>
+               
+                         </mat-form-field>
+                   </div>
+                 </div>
+                   </div>  
+                   <div class="row">
+                    <div class="col-md-2"></div>
+                       <div class="col-md-3 mb-4">
+                     <div class="form-outline">
+                       <mat-form-field appearance="fill" class="example-full-width">
+                           <mat-label>Address1</mat-label>
+                           <input type="text" required id="add1" matInput name="Empadd1" #address="ngModel" [(ngModel)]="EmpObj.add1"/>
+                           <mat-error *ngIf="address.invalid">
+                             Address is <strong>required</strong>
+                           </mat-error>
+                         </mat-form-field>
+                         </div>
+                         </div>
+                         <div class="col-md-3 mb-4">
+                           <div class="form-outline">
+                               <mat-form-field appearance="fill" class="example-full-width">
+                                   <mat-label>Address2</mat-label>
+                                   <input type="text" required id="add1" matInput name="Empadd2" #address="ngModel" [(ngModel)]="EmpObj.add2"/>
+                                 </mat-form-field>
+                           </div>
+                       </div>
+   
+                               <div class="col-md-3 mb-4">
+                                   <div class="form-outline">
+                                       <div class="example-container">
+                                           <mat-form-field hintLabel="Max 6 characters" appearance="fill" class="example-full-width">
+                                             <mat-label>Employeeid</mat-label>
+                                             <input  type="text" required id ="empid" matInput  placeholder="000000" name="EmployeeId" #Empid="ngModel" [(ngModel)]="EmployeeId">
+                                           </mat-form-field>
+                                         
+                                   </div>
+                               </div>
+   
+                   </div>
+                   </div>
+                   <div class="container" style="text-align:center;">
+                    
+                    
+                   <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" (click)="Update()">Update</button>
+                    
+                    <div class="space"></div>
+                    
+                   <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" (click)="Backtoemployee()"> Employee</button>
+                    
+                   </div>
+                   
+               </form> 
+               

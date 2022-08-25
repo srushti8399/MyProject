@@ -1,0 +1,135 @@
+<h2 class="text-uppercase text-center mb-5 padding">Edit Product</h2>
+<form class="center padding-table" [formGroup]="productForm">
+   
+ <div class="row">
+  <div class="col-md-2"></div>
+   <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       <mat-form-field appearance="fill" class="example-full-width">
+         <mat-label>Category</mat-label>
+         <input required id="category" matInput placeholder="Enter Category" value={{ProdObj.category}} name="category" formControlName="category" />
+          <mat-error *ngIf="category.invalid">
+           Category is <strong>required</strong>
+         </mat-error> 
+       </mat-form-field>
+    </div>
+</div>
+<div class="col-md-3 mb-4">
+  <div class="form-outline">
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input required id="name"  matInput placeholder="Enter Name" value={{ProdObj.name}}  name="name"  formControlName="name"  />
+        <mat-error *ngIf="productForm.get('name')!.errors!==null && productForm.get('name')!.errors!['required']">
+        Name is <strong>required</strong>
+      </mat-error> 
+    </mat-form-field>
+  </div>
+</div>
+<div class="col-md-3 mb-4">
+  <div class="form-outline">
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>code</mat-label>
+      <input required id="code" matInput placeholder="Enter code" value={{ProdObj.code}} name="code" formControlName="code"  />
+      
+       <mat-error *ngIf="productForm.get('code')!.errors!==null && productForm.get('code')!.errors!['required']">
+        code is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="productForm.get('code')!.errors!==null && productForm.get('code')!.errors!['minlength']">
+         minimum  <strong>1</strong>character is required.
+       </mat-error>
+       <mat-error *ngIf="productForm.get('code')!.errors!==null && productForm.get('code')!.errors!['maxlength']">
+         minimum <strong>6</strong>characters required
+       </mat-error> 
+    </mat-form-field>
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-3 mb-4">
+<div class="form-outline">
+<mat-form-field appearance="fill" class="example-full-width">
+   <mat-label>colour</mat-label>
+   <input required id="colour" matInput placeholder="Enter colour" value={{ProdObj.colour}}  name="colour" formControlName="colour"  />
+   <mat-error *ngIf="productForm.get('colour')!.errors!==null && productForm.get('colour')!.errors!['required'] ">
+     Colour is <strong>required</strong>
+   </mat-error> 
+</mat-form-field>
+</div>
+</div>
+<div class="col-md-3 mb-4">
+<div class="form-outline">
+<mat-form-field appearance="fill" class="example-full-width">
+   <mat-label>Description</mat-label>
+   <input required id="description" matInput type="text" placeholder="description" value={{ProdObj.description}} name="description" formControlName="description" />
+   <!-- <mat-error *ngIf="productForm.get('description')!.errors!==null && productForm.get('description')!.errors!['required'] ">
+     Description is <strong>required</strong>
+   </mat-error> -->
+   <mat-error *ngIf="productForm.get('description')!.errors!==null && productForm.get('description')!.errors!['descriptionmismatch']">
+     Description is invalid.
+     </mat-error>
+ </mat-form-field>
+
+</div>
+</div>
+<div class="col-md-3 mb-4">
+<div class="form-outline">
+  <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Price</mat-label>
+      <input required id="price" matInput type="text" placeholder="price" value={{ProdObj.price}} name="price" formControlName="price"  />
+      <mat-error *ngIf="productForm.get('price')!.errors!==null && productForm.get('price')!.errors!['required']">
+         Price is <strong>required</strong>
+       </mat-error>
+       <mat-error *ngIf="productForm.get('price')!.errors!==null && productForm.get('price')!.errors!['min']">
+          Price  must be greater than 200
+        </mat-error>
+        <mat-error *ngIf="productForm.get('price')!.errors!==null && productForm.get('price')!.errors!['max']">
+          Price must be less than 1 lakh
+        </mat-error> 
+    </mat-form-field>
+</div>
+</div>
+</div>  
+<div class="row">
+<div class="col-md-2"></div>
+  <div class="col-md-3 mb-4">
+<div class="form-outline">
+  <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>stock</mat-label>
+      <input type="text" required id="stock" value={{ProdObj.stock}} matInput name="stock" formControlName="stock"  />
+      <mat-error *ngIf="productForm.get('stock')!.errors!==null && productForm.get('stock')!.errors!['required']">
+         Stock is <strong>required</strong>
+       </mat-error>
+       <mat-error *ngIf="productForm.get('stock')!.errors!==null && productForm.get('stock')!.errors!['min']">
+          Stock  must be greater than 0
+        </mat-error>
+    </mat-form-field>
+    </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="form-outline">
+          <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>Image</mat-label>
+              <input type="text" required id="image" matInput value={{ProdObj.image}} name="image" formControlName="image"  />
+            
+            <mat-error *ngIf="productForm.get('image')!.errors!==null && productForm.get('image')!.errors!['required'] ">
+             Image is <strong>required</strong>
+           </mat-error>
+         </mat-form-field>
+      </div>
+  </div>
+
+
+</div>
+<div class="container" style="text-align:center;">
+                    
+                    
+  <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" (click)="Update1()">Update</button>
+   
+   <div class="space"></div>
+   
+  <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" (click)="Backtoproduct()">Go to Product</button>
+   
+  </div>
+
+</form> 

@@ -1,0 +1,74 @@
+<!-- <section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5"> -->
+              <h2 class="text-uppercase text-center mb-5">Employees</h2>
+              <div col-md-1></div>
+              <div col-md-9>
+              
+              <table class="row"  align="center" mat-table [dataSource]="employees" class="mat-elevation-z8">
+                <table class="table" align="center">
+                  <thead class="thead-dark">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef><strong> Employee Id</strong> </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  </ng-container>
+                
+                <ng-container matColumnDef="firstname">
+                  <th mat-header-cell *matHeaderCellDef> Firstname </th>
+                  <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+                </ng-container>
+              
+               
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="lastname">
+                  <th mat-header-cell *matHeaderCellDef>Lastname </th>
+                  <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th  mat-header-cell *matHeaderCellDef style="text-align:centre ;">Actions </th>
+                    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="navigate(element)" style="background-color: #4CAF50;">View</button> 
+                      <div class="space"></div>
+                  
+              
+                  
+                     <button mat-raised-button color="primary" (click)="navigatetoedit(element)" style="background-color: #7ac7f1;">Edit</button> 
+                     <div class="space"></div>
+                 
+              
+                  
+                     <button mat-raised-button color="primary" (click)="navigatetoDelete(element)" style="background-color: #d22626;">Delete</button> </td>
+                  </ng-container>
+                
+              
+             
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </thead>
+                </table>
+            
+              </table>
+              </div>
+          
+            
+            
+            
+              
+            <!-- </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section> -->

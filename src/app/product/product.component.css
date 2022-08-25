@@ -1,0 +1,22 @@
+table {
+	width: 100%;
+  }
+  
+  mat-header-cell, mat-cell {
+	justify-content: center;
+  }
+  .space {
+	width: 8px;
+	height: auto;
+	display: inline-block;
+  }
+  .btn-lg {
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-font-size: 1.25rem;
+    --bs-btn-border-radius: 0.5rem;
+}
+.padding{
+  padding-left: 2cm;
+  padding-right: 2cm;
+}
